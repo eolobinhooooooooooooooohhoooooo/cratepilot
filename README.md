@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="Branding/README-banner.png" alt="CratePilot" width="100%">
-</p>
-
 # CratePilot
 
 A lightweight, portable Windows utility that automates opening **Low, Mid, and High Grade** crates in Roblox using screen capture and OCR.
