@@ -12,7 +12,6 @@
     <Prefer32Bit>false</Prefer32Bit>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon Condition="Exists('Branding\CratePilot.ico')">Branding\CratePilot.ico</ApplicationIcon>
-    <ApplicationIcon Condition="'$(ApplicationIcon)' == '' And Exists('Assets\CratePilot.ico')">Assets\CratePilot.ico</ApplicationIcon>
     <Deterministic>true</Deterministic>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
@@ -57,8 +56,6 @@
       <IsWinMDFile>true</IsWinMDFile>
       <Private>false</Private>
     </Reference>
-    <None Remove="Assets\**\*" />
-    <Resource Include="Assets\**\*" />
     <None Remove="Branding\CratePilot.png" />
     <Resource Include="Branding\CratePilot.png" Condition="Exists('Branding\CratePilot.png')" />
     <Resource Include="Branding\CratePilot.ico" Condition="Exists('Branding\CratePilot.ico')" />

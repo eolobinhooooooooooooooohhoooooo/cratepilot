@@ -6,3 +6,4 @@ dist/
 *.suo
 *.log
 TestResults/
+AGENTS.md

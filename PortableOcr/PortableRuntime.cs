@@ -235,8 +235,6 @@ namespace CratePilot.PortableOcr
                 "CFC7749B96F63BD31C3C42B5C471BF756814053E847C10F3EB003417BC523D30");
             AddLicense(assets, "Leptonica-BSD-2-Clause.txt", 1521,
                 "87829ABB5BBB00B55A107365DA89E9A33F86C4250169E5A1E5588505BE7D5806");
-            AddLicense(assets, "Microsoft-VisualStudio-2022-Community-License-EN.docx", 62859,
-                "41A207B10C8AB91D0D2F10A854715F73DCA54509581692D2FE179AA3FFCB8540");
             AddLicense(assets, "Microsoft-VisualStudio-2022-Community-License-EN.txt", 19043,
                 "A38D10AFC3EF8FB2E64AF972A9C64D998EF964DE8101B9F7A59703F72FA3A5AB");
             AddLicense(assets, "Microsoft-VisualStudio-2022-Redist.txt", 187,
