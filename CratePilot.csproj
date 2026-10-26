@@ -59,10 +59,7 @@
     <None Remove="Branding\CratePilot.png" />
     <Resource Include="Branding\CratePilot.png" Condition="Exists('Branding\CratePilot.png')" />
     <Resource Include="Branding\CratePilot.ico" Condition="Exists('Branding\CratePilot.ico')" />
-    <EmbeddedResource Include="Branding\LICENSE.txt" Condition="Exists('Branding\LICENSE.txt')">
-      <LogicalName>CratePilot.Branding.LICENSE.txt</LogicalName>
-    </EmbeddedResource>
-    <None Remove="PortableOcr\Native\**\*;PortableOcr\Data\eng.traineddata;PortableOcr\Licenses\**\*" />
+    <None Remove="PortableOcr\Native\**\*;PortableOcr\Data\eng.traineddata" />
     <EmbeddedResource Include="PortableOcr\Native\x64\*">
       <LogicalName>CratePilot.PortableOcr.Native.x64.%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
@@ -71,9 +68,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PortableOcr\Data\eng.traineddata" Condition="Exists('PortableOcr\Data\eng.traineddata')">
       <LogicalName>CratePilot.PortableOcr.Data.eng.traineddata</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PortableOcr\Licenses\**\*">
-      <LogicalName>CratePilot.PortableOcr.Licenses.%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <Target Name="CheckOfflineBuildPrerequisites" BeforeTargets="ResolveReferences">

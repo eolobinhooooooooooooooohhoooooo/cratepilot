@@ -74,7 +74,6 @@ namespace CratePilot.PortableOcr
                         // This also closes the verification-to-load file replacement window.
                         foreach (RuntimeAsset asset in assets)
                         {
-                            if (asset.Resource.IndexOf(".Licenses.", StringComparison.Ordinal) >= 0) continue;
                             FileStream stream = runtime.OpenVerified(asset);
                             runtime.pinnedFiles.Add(stream);
                         }
@@ -229,18 +228,7 @@ namespace CratePilot.PortableOcr
             else throw new PlatformNotSupportedException("Unsupported portable OCR architecture.");
             assets.Add(new RuntimeAsset("Data.eng.traineddata", Path.Combine("tessdata", "eng.traineddata"), 4113088,
                 "7D4322BD2A7749724879683FC3912CB542F19906C83BCC1A52132556427170B2"));
-            AddLicense(assets, "Tesseract-Apache-2.0.txt", 11358,
-                "CFC7749B96F63BD31C3C42B5C471BF756814053E847C10F3EB003417BC523D30");
-            AddLicense(assets, "Leptonica-BSD-2-Clause.txt", 1521,
-                "87829ABB5BBB00B55A107365DA89E9A33F86C4250169E5A1E5588505BE7D5806");
-            AddLicense(assets, "Microsoft-VCRuntime-Redist.txt", 395,
-                "889829ADD7370E5BC5C067D6C8926D264E88490066EE8F861731273B69B73E49");
             return assets.ToArray();
-        }
-
-        private static void AddLicense(List<RuntimeAsset> assets, string name, long length, string sha256)
-        {
-            assets.Add(new RuntimeAsset("Licenses." + name, Path.Combine("licenses", name), length, sha256));
         }
     }
 }

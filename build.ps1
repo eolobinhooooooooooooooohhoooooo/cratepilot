@@ -42,14 +42,11 @@ try {
     if (-not (Test-Path -LiteralPath (Join-Path $referencesPath 'PresentationFramework.dll'))) {
         throw 'The .NET Framework 4.8 Developer Pack is required. This build does not install or download it.'
     }
-    $licenses = @('Tesseract-Apache-2.0.txt','Leptonica-BSD-2-Clause.txt',
-        'Microsoft-VCRuntime-Redist.txt')
-    $required = @('Branding\LICENSE.txt','PortableOcr\Data\eng.traineddata')
+    $required = @('PortableOcr\Data\eng.traineddata')
     foreach ($architecture in @('x64','x86')) {
         foreach ($name in @('tesseract50.dll','leptonica-1.82.0.dll','msvcp140.dll','vcruntime140.dll')) { $required += 'PortableOcr\Native\' + $architecture + '\' + $name }
     }
     $required += 'PortableOcr\Native\x64\vcruntime140_1.dll'
-    foreach ($name in $licenses) { $required += 'PortableOcr\Licenses\' + $name }
     foreach ($relative in $required) {
         if (-not (Test-Path -LiteralPath (Join-Path $projectRoot $relative) -PathType Leaf)) { throw ('Required offline asset is missing: ' + $relative) }
     }
@@ -79,10 +76,6 @@ try {
     Copy-Item -LiteralPath $outputExe -Destination $distExe -Force
     $hash = (Get-FileHash -LiteralPath $distExe -Algorithm SHA256).Hash.ToLowerInvariant()
     [IO.File]::WriteAllText((Join-Path $distPath 'CratePilot.exe.sha256'), "$hash  CratePilot.exe`r`n", [Text.Encoding]::ASCII)
-    $licensePath = Join-Path $distPath 'licenses'
-    New-Item -ItemType Directory -Path $licensePath -Force | Out-Null
-    Copy-Item -LiteralPath (Join-Path $projectRoot 'Branding\LICENSE.txt') -Destination (Join-Path $licensePath 'Branding-LICENSE.txt') -Force
-    foreach ($name in $licenses) { Copy-Item -LiteralPath (Join-Path $projectRoot ('PortableOcr\Licenses\' + $name)) -Destination (Join-Path $licensePath $name) -Force }
     Write-Host ('Executable: ' + $distExe)
     Write-Host ('Architecture: ' + [Reflection.AssemblyName]::GetAssemblyName($distExe).ProcessorArchitecture)
     Write-Host ('Bytes: ' + (Get-Item -LiteralPath $distExe).Length)

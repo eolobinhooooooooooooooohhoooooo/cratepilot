@@ -49,7 +49,6 @@ The output executable will be generated at `dist\CratePilot.exe`.
 
 ---
 
-## License & Disclaimer
+## Disclaimer
 
-- Source code licensed under the **MIT License**. Third-party components retain their respective licenses in `licenses/`.
-- **Disclaimer:** Roblox is a registered trademark of Roblox Corporation. CratePilot is an independent open-source project and is not affiliated with, endorsed by, or sponsored by Roblox Corporation.
+Roblox is a registered trademark of Roblox Corporation. CratePilot is an independent project and is not affiliated with, endorsed by, or sponsored by Roblox Corporation.
