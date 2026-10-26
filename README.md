@@ -68,7 +68,8 @@ O executável está **NotSigned**. Windows SmartScreen pode avisar ou bloquear; 
 - Roblox é marca da Roblox Corporation. CratePilot é um utilitário independente; não há afiliação, patrocínio ou endosso da Roblox Corporation. Use conforme as regras da experiência e da plataforma.
 
 ## Publicação no GitHub
-- O repositório versiona o código-fonte; `bin/`, `obj/` e `dist/` ficam fora do Git (`.gitignore`). O executável pronto, o `.sha256` e as licenças devem ser publicados como artefatos da release correspondente.
+- Repositório público: <https://github.com/lobnho/cratepilot>; executável pronto, `.sha256` e licenças são publicados como artefatos da release correspondente (atual: [v1.0.0](https://github.com/lobnho/cratepilot/releases/tag/v1.0.0)).
+- O repositório versiona o código-fonte; `bin/`, `obj/` e `dist/` ficam fora do Git (`.gitignore`).
 - O build offline (`build.ps1`) compara o digest dos inputs antes/depois da compilação e publica o checksum em `dist/CratePilot.exe.sha256`.
 
 ## Limites de verificação
