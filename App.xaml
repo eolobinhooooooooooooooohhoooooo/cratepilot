@@ -1,0 +1,16 @@
+<Application x:Class="CratePilot.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:theme="clr-namespace:CratePilot.UI.Theme"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="UI/Theme/PixelArtwork.xaml" />
+                <ResourceDictionary Source="UI/Theme/ClassicTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <theme:CompactStatusTitleConverter x:Key="CompactStatusTitle" />
+            <theme:CompactStatusDetailConverter x:Key="CompactStatusDetail" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
