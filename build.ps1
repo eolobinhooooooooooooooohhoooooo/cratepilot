@@ -16,7 +16,7 @@ function Invoke-Dotnet {
 }
 
 function Get-InputDigest {
-    $extensions = @('.cs','.xaml','.csproj','.manifest','.ps1','.ico','.png','.dll','.traineddata','.txt','.docx','.md')
+    $extensions = @('.cs','.xaml','.csproj','.manifest','.ps1','.ico','.png','.dll','.traineddata','.txt','.md')
     $rows = @(Get-ChildItem -LiteralPath $projectRoot -Recurse -File | Where-Object {
         $relative = $_.FullName.Substring($projectRoot.Length + 1)
         $parts = $relative.Split('\')
@@ -42,8 +42,8 @@ try {
     if (-not (Test-Path -LiteralPath (Join-Path $referencesPath 'PresentationFramework.dll'))) {
         throw 'The .NET Framework 4.8 Developer Pack is required. This build does not install or download it.'
     }
-    $licenses = @('Tesseract-Apache-2.0.txt','TessdataFast-Apache-2.0.txt','Leptonica-BSD-2-Clause.txt',
-        'Microsoft-VisualStudio-2022-Community-License-EN.txt','Microsoft-VisualStudio-2022-Redist.txt')
+    $licenses = @('Tesseract-Apache-2.0.txt','Leptonica-BSD-2-Clause.txt',
+        'Microsoft-VCRuntime-Redist.txt')
     $required = @('Branding\LICENSE.txt','PortableOcr\Data\eng.traineddata')
     foreach ($architecture in @('x64','x86')) {
         foreach ($name in @('tesseract50.dll','leptonica-1.82.0.dll','msvcp140.dll','vcruntime140.dll')) { $required += 'PortableOcr\Native\' + $architecture + '\' + $name }

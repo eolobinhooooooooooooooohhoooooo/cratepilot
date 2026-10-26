@@ -24,10 +24,9 @@ SOFTWARE.
 
 Third-party components bundled in this repository keep their own licenses:
 
-- Tesseract OCR: Apache License 2.0 (PortableOcr/Licenses/Tesseract-Apache-2.0.txt)
-- tessdata_fast eng.traineddata: Apache License 2.0 (PortableOcr/Licenses/TessdataFast-Apache-2.0.txt)
+- Tesseract OCR (tesseract50.dll) and tessdata_fast eng.traineddata: Apache License 2.0
+  (PortableOcr/Licenses/Tesseract-Apache-2.0.txt)
 - Leptonica: BSD 2-Clause License (PortableOcr/Licenses/Leptonica-BSD-2-Clause.txt)
 - Microsoft Visual C++ 2015-2022 Redistributable runtime: see
-  PortableOcr/Licenses/Microsoft-VisualStudio-2022-Redist.txt and
-  PortableOcr/Licenses/Microsoft-VisualStudio-2022-Community-License-EN.txt
+  PortableOcr/Licenses/Microsoft-VCRuntime-Redist.txt
 - Application artwork (icon and pixel glyphs): original, see Branding/LICENSE.txt
